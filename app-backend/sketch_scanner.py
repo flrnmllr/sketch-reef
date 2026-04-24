@@ -19,6 +19,14 @@ class SketchScanner:
             "8-9-10-11": {
                 "id": 3,
                 "name": "sketch3"
+            },
+            "12-13-14-15": {
+                "id": 3,
+                "name": "sketch4"
+            },
+            "16-17-18-19": {
+                "id": 3,
+                "name": "sketch5"
             }
         }
 

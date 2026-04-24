@@ -1,5 +1,5 @@
 .venv
 dist/*
-photos/*
-sketches/*
-uploads/*
+app-data/photos/*
+app-data/sketches/*
+app-data/uploads/*

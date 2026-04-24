@@ -14,19 +14,20 @@ sketch_scanner = SketchScanner()
 app = Flask(__name__, static_folder="vue-app", static_url_path="")
 
 def get_base_dir():
-    if getattr(sys, 'frozen', False):
+    if getattr(sys, "frozen", False):
         return os.path.dirname(sys.executable)
-    if hasattr(sys, '_MEIPASS'):
+    if hasattr(sys, "_MEIPASS"):
         return sys._MEIPASS
     return os.path.abspath(".")
 
 BASE_DIR = get_base_dir()
 
-app.config['UPLOAD_FOLDER'] = os.path.join(BASE_DIR, "uploads")
-app.config['SKETCH_FOLDER'] = os.path.join(BASE_DIR, "sketches")
-app.config['WATCH_FOLDER'] = os.path.join(BASE_DIR, "photos")
+app.config["APP_FOLDER"] = os.path.join(BASE_DIR, "app-data")
+app.config["UPLOAD_FOLDER"] = os.path.join(app.config["APP_FOLDER"], "uploads")
+app.config["SKETCH_FOLDER"] = os.path.join(app.config["APP_FOLDER"], "sketches")
+app.config["WATCH_FOLDER"] = os.path.join(app.config["APP_FOLDER"], "photos")
 
-ALLOWED_EXTENSIONS = {'.pdf', '.png', '.jpg', '.jpeg'}
+ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg"}
 
 def wait_until_complete(path):
     size = -1
@@ -49,14 +50,14 @@ class EventHandler(FileSystemEventHandler):
         if ext.lower() in ALLOWED_EXTENSIONS:
             wait_until_complete(event.src_path)
             try:
-                sketch_scanner.scan(event.src_path, app.config['SKETCH_FOLDER'])
+                sketch_scanner.scan(event.src_path, app.config["SKETCH_FOLDER"])
             except Exception as e:
                 print(f"[Watchdog] {e}")
             os.remove(event.src_path)
 
 def start_watchdog():
     observer = Observer()
-    observer.schedule(EventHandler(), app.config['WATCH_FOLDER'], recursive=False)
+    observer.schedule(EventHandler(), app.config["WATCH_FOLDER"], recursive=False)
     observer.start()
     print("[Watchdog] running...")
     try:
@@ -66,7 +67,7 @@ def start_watchdog():
         observer.stop()
     observer.join()
 
-@app.route("/", methods=['GET'])
+@app.route("/", methods=["GET"])
 def frontend():
     return send_from_directory(app.static_folder, "index.html")
 
@@ -74,26 +75,26 @@ def frontend():
 def serve_static(path):
     return send_from_directory(app.static_folder, path)
 
-@app.route("/api", methods=['POST'])
+@app.route("/api", methods=["POST"])
 def upload_file():
-    if 'file' not in request.files:
+    if "file" not in request.files:
         return jsonify({"success": False, "error": "No file part"}), 400
 
-    file = request.files['file']
+    file = request.files["file"]
 
-    if file.filename == '':
+    if file.filename == "":
         return jsonify({"success": False, "error": "Empty filename"}), 400
 
-    if not '.' in file.filename and os.path.splitext(file.filename).lower() in ALLOWED_EXTENSIONS:
+    if not "." in file.filename and os.path.splitext(file.filename).lower() in ALLOWED_EXTENSIONS:
         return jsonify({"success": False, "error": "File type not allowed"}), 400
 
     filename = secure_filename(file.filename)
-    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    file_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
 
     try:
         file.save(file_path)
 
-        sketch_scanner.scan(file_path, app.config['SKETCH_FOLDER'])
+        sketch_scanner.scan(file_path, app.config["SKETCH_FOLDER"])
 
         os.remove(file_path)
 
@@ -111,20 +112,20 @@ def upload_file():
 @app.route("/api", methods=["GET"])
 def get_sketches():
     try:
-        files = os.listdir(app.config['SKETCH_FOLDER'])
+        files = os.listdir(app.config["SKETCH_FOLDER"])
         current_time = time.time()
         data = {
             "sketches": []
         }
         for i, filename in enumerate(files):
-            file_path = os.path.join(app.config['SKETCH_FOLDER'], filename)
+            file_path = os.path.join(app.config["SKETCH_FOLDER"], filename)
             file_mtime = os.path.getmtime(file_path)
             if True or current_time - file_mtime <= 60:
-                if filename.count('_') >= 1:
-                    parts = filename.split('_')
+                if filename.count("_") >= 1:
+                    parts = filename.split("_")
                     if len(parts) == 2:
                         timestamp = parts[0]
-                        identifier = parts[1].split('.')[0]
+                        identifier = parts[1].split(".")[0]
                         data["sketches"].append({
                             "timestamp": timestamp,
                             "identifier": identifier,
@@ -136,21 +137,22 @@ def get_sketches():
 
 @app.route("/api/<filename>", methods=["GET"])
 def get_sketch(filename):
-    return send_from_directory(app.config['SKETCH_FOLDER'], filename)
+    return send_from_directory(app.config["SKETCH_FOLDER"], filename)
 
-@app.route('/shutdown', methods=['POST'])
+@app.route("/shutdown", methods=["POST"])
 def shutdown():
     import os
     import signal
 
     os.kill(os.getpid(), signal.SIGTERM)
-    return 'Server shutting down...'
+    return "Server shutting down..."
 
 if __name__ == "__main__":
 
-    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-    os.makedirs(app.config['SKETCH_FOLDER'], exist_ok=True)
-    os.makedirs(app.config['WATCH_FOLDER'], exist_ok=True)
+    os.makedirs(app.config["APP_FOLDER"], exist_ok=True)
+    os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
+    os.makedirs(app.config["SKETCH_FOLDER"], exist_ok=True)
+    os.makedirs(app.config["WATCH_FOLDER"], exist_ok=True)
 
     threading.Thread(target=start_watchdog, daemon=True).start()
 

@@ -267,7 +267,7 @@ public class FlockManager : MonoBehaviour
         Renderer[] renderers = flockUnit.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers)
         {
-            Material material = renderer.material; 
+            Material material = renderer.material;
             if (material.HasProperty("_BaseColorMap"))
                 material.SetTexture("_BaseColorMap", texture);
             else if (material.HasProperty("_MainTex"))

@@ -224,7 +224,6 @@ public class FlockManager : MonoBehaviour
 
                     string identifier = sketch.identifier;
                     int id = int.Parse(identifier[^1].ToString()) - 1;
-                    Debug.Log(id);
 
                     if (flockUnitPrefabs[id] != null)
                     {

@@ -1080,6 +1080,7 @@ MonoBehaviour:
   flockUnitPrefabs:
   - {fileID: 8319905897703981706, guid: 607c1ee5e1acffc58b4c779f202f6a4a, type: 3}
   - {fileID: 6858909952542391743, guid: c74df73134065858bbfb8d5283300878, type: 3}
+  - {fileID: 6288503634041617388, guid: a020d40d7d2a59c758c469910238dffa, type: 3}
   flockUnitCount: 10
   maxFlockUnits: 20
   swimLimits: {x: 5, y: 1, z: 1.5}

@@ -141,6 +141,6 @@ MonoBehaviour:
   minSpeed: 0.5
   maxSpeed: 1
   swimDepth: 1
-  waterForce: 2.5
+  waterForce: 2
   lockPitchAndRoll: 0
   maxInstances: -1

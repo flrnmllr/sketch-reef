@@ -1,0 +1,27 @@
+services:
+  nginx:
+    container_name: "nginx"
+    image: nginx
+    ports:
+      - "4000:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
+  app-backend:
+    container_name: "app-backend"
+    build:
+      context: ./app-backend
+      dockerfile: Dockerfile
+    expose:
+      - "5000"
+    volumes:
+      - ./app-backend/sketches:/usr/src/app/sketches
+    restart: unless-stopped
+  app-frontend:
+    container_name: "app-frontend"
+    build:
+      context: ./app-frontend
+      dockerfile: Dockerfile
+    expose:
+      - "8080"
+    restart: unless-stopped

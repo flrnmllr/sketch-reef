@@ -212,6 +212,7 @@ MonoBehaviour:
       - rid: 1798469456815718408
       - rid: 1798469456815718409
       - rid: 1798469456815718410
+      - rid: 1798469456815718411
       - rid: 1798469456815718412
       - rid: 1798469456815718413
       - rid: 1798469456815718417
@@ -563,7 +564,7 @@ MonoBehaviour:
       type: {class: WaterSystemGlobalSettings, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
         m_Version: 1
-        m_EnableMaskAndCurrentWaterDecals: 0
+        m_EnableMaskAndCurrentWaterDecals: 1
     - rid: 1798469456815718410
       type: {class: ColorGradingSettings, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:

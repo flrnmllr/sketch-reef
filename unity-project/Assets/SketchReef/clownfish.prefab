@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &9202920590843838427
+--- !u!1001 &4430519742323115207
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -26,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f4a1b94174b135afa2ed3a105786e59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f4a1b94174b135afa2ed3a105786e59, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4f4a1b94174b135afa2ed3a105786e59, type: 3}
       propertyPath: m_LocalRotation.w
@@ -74,27 +74,27 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f4a1b94174b135afa2ed3a105786e59, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 188508315053172323}
+      addedObject: {fileID: 2093358917404310609}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f4a1b94174b135afa2ed3a105786e59, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8290209786736992679}
+      addedObject: {fileID: 8541221775561230788}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f4a1b94174b135afa2ed3a105786e59, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4946329791338545908}
+      addedObject: {fileID: 4063295024022848189}
   m_SourcePrefab: {fileID: 100100000, guid: 4f4a1b94174b135afa2ed3a105786e59, type: 3}
---- !u!1 &8319905897703981706 stripped
+--- !u!1 &3584082359698028950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f4a1b94174b135afa2ed3a105786e59, type: 3}
-  m_PrefabInstance: {fileID: 9202920590843838427}
+  m_PrefabInstance: {fileID: 4430519742323115207}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &188508315053172323
+--- !u!95 &2093358917404310609
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8319905897703981706}
+  m_GameObject: {fileID: 3584082359698028950}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d792071da484099168289851c0fa5504, type: 2}
@@ -109,13 +109,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &8290209786736992679
+--- !u!111 &8541221775561230788
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8319905897703981706}
+  m_GameObject: {fileID: 3584082359698028950}
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: -623603649343465320, guid: 4f4a1b94174b135afa2ed3a105786e59, type: 3}
@@ -125,13 +125,13 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
---- !u!114 &4946329791338545908
+--- !u!114 &4063295024022848189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8319905897703981706}
+  m_GameObject: {fileID: 3584082359698028950}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8234fd2aef712ce397d9d39a6e45e4e, type: 3}
@@ -141,6 +141,6 @@ MonoBehaviour:
   minSpeed: 0.5
   maxSpeed: 1
   swimDepth: 1
-  waterForce: 2
+  waterForce: 1
   lockPitchAndRoll: 0
   maxInstances: -1

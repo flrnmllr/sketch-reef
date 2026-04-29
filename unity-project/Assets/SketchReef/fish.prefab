@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6594441304111875773
+--- !u!1001 &6942563553192491221
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -74,46 +74,27 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82be320013de0f62db09a7886f6a008a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5959144609793099382}
+      addedObject: {fileID: -4776818095945435342}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82be320013de0f62db09a7886f6a008a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5927221197218932225}
+      addedObject: {fileID: -3388598399959828139}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82be320013de0f62db09a7886f6a008a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2778001219727251125}
+      addedObject: {fileID: -9024823803612376385}
   m_SourcePrefab: {fileID: 100100000, guid: 82be320013de0f62db09a7886f6a008a, type: 3}
---- !u!1 &6288503634041617388 stripped
+--- !u!1 &7825454144458687876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 82be320013de0f62db09a7886f6a008a, type: 3}
-  m_PrefabInstance: {fileID: 6594441304111875773}
+  m_PrefabInstance: {fileID: 6942563553192491221}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5959144609793099382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288503634041617388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8234fd2aef712ce397d9d39a6e45e4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlockUnit
-  waterSurface: {fileID: 0}
-  minSpeed: 0.5
-  maxSpeed: 1
-  swimDepth: 1
-  waterForce: 2
-  lockPitchAndRoll: 1
-  maxInstances: -1
---- !u!95 &5927221197218932225
+--- !u!95 &-4776818095945435342
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288503634041617388}
+  m_GameObject: {fileID: 7825454144458687876}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8a05fa2d18d40aedf9aa9e65e08d7c52, type: 2}
@@ -128,13 +109,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &2778001219727251125
+--- !u!111 &-3388598399959828139
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288503634041617388}
+  m_GameObject: {fileID: 7825454144458687876}
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: -623603649343465320, guid: 82be320013de0f62db09a7886f6a008a, type: 3}
@@ -144,3 +125,22 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &-9024823803612376385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825454144458687876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8234fd2aef712ce397d9d39a6e45e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlockUnit
+  waterSurface: {fileID: 0}
+  minSpeed: 0.5
+  maxSpeed: 1
+  swimDepth: 1
+  waterForce: 2
+  lockPitchAndRoll: 0
+  maxInstances: -1

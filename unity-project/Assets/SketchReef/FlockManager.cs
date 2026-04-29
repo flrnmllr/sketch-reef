@@ -61,7 +61,7 @@ public class FlockManager : MonoBehaviour
 
             if (rand <= 0.9f)
             {
-                prefabToSpawn = flockUnitPrefabs[0];
+                prefabToSpawn = flockUnitPrefabs[2];
             }
             else
             {
@@ -72,7 +72,7 @@ public class FlockManager : MonoBehaviour
                 }
                 else
                 {
-                    prefabToSpawn = flockUnitPrefabs[0];
+                    prefabToSpawn = flockUnitPrefabs[2];
                 }
             }
             
@@ -82,7 +82,7 @@ public class FlockManager : MonoBehaviour
             }
             else
             {
-                prefabToSpawn = flockUnitPrefabs[0];
+                prefabToSpawn = flockUnitPrefabs[2];
             }
 
             SpawnFlockUnit(prefabToSpawn, null);

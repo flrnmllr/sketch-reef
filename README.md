@@ -19,18 +19,23 @@ Frontend and Backend are packaged into the [app](app-backend/dist/app) via PyIns
 ## Sketches
 - [sketch_fish.pdf](sketch/sketch_fish.pdf)
 - [sketch_submarine.pdf](sketch/sketch_submarine.pdf)
+- [sketch_fish2.pdf](sketch/sketch_fish2.pdf)
 
 ![sketch_fish.jpg](sketch/sketch_fish.jpg)
-![sketch_fish.jpg](sketch/sketch_submarine.jpg)
+![sketch_submarine.jpg](sketch/sketch_submarine.jpg)
+![sketch_fish2.jpg](sketch/sketch_fish2.jpg)
 
 ## Credits
 
 ### 3D-Scene
 Unity HDRP Sample Content
 - https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@17.6/manual/HDRP-Sample-Content.html#water-samples
-### Fisch
+### Fish 1
 Denys Almaral
 - https://assetstore.unity.com/packages/3d/characters/animals/fish/fish-alive-free-samples-362806
 ### Submarine
 keptin
 - https://www.turbosquid.com/3d-models/odyssey-submarine-3d-model-1799692
+### Fish 2
+No Skill Modelling
+- https://sketchfab.com/3d-models/fish-rainbow-animated-ff8ca0691d004a13a89963a3b36defb4

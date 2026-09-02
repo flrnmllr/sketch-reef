@@ -156,4 +156,4 @@ if __name__ == "__main__":
 
     threading.Thread(target=start_watchdog, daemon=True).start()
 
-    app.run(host="127.0.0.1", port=5000, use_reloader=False)
+    app.run(host="0.0.0.0", port=5000, use_reloader=False)
